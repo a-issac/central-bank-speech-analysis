@@ -1,0 +1,9 @@
+numpy
+pandas
+
+nltk
+spacy
+spacy_langdetect
+spacytextblob
+
+https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.2.0/en_core_web_trf-3.2.0.tar.gz
