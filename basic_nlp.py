@@ -180,8 +180,8 @@ def freq_words_year(df,year,n = 10):
     text=year_speeches(df,year)
     return collections.Counter(tokens_filter(text)).most_common(n)
 
-def plot_freq_word(df, year):
-    L = freq_words_year(df,year,20)
+def plot_freq_word(df, year, n=10):
+    L = freq_words_year(df,year,n)
     x = []
     y = []
     z = []
@@ -192,4 +192,6 @@ def plot_freq_word(df, year):
 
     plt.clf()
     fig, ax = plt.subplots(figsize=(8, 8))
+    ax.set_xticklabels(labels=x, rotation=45)
+    ax.title.set_text("Termes les plus fréquents dans les discours de l'année " + str(year))
     return plt.bar(x,y)

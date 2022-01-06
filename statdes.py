@@ -8,12 +8,13 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import re
-#!pip install spacy
+
 import spacy
-#!pip install langdetect
+
 import langdetect
 import nltk
 from nltk.corpus import stopwords
+import plotly
 
 
 
@@ -22,7 +23,7 @@ def count_speeches(df, groupingby = 'Year', kind = 'line'):
     dict1 = {'bar' : 'N', 'line' : 'Evolution du n'}
     dict2 = {'Year' : 'Année', 'Month' : 'Mois', 'Day' : 'Jour du mois', 'DayofWeek' : 'Jour de la semaine'}
 
-    plot = df_grouped["date"].plot(title = dict1[kind] + 'ombre de discours du Comité Exécutif de la BCE par' + dict2[groupingby], xlabel = dict2[groupingby])
+    plot = df_grouped["date"].plot(title = dict1[kind] + 'ombre de discours du Comité Exécutif de la BCE par ' + dict2[groupingby], xlabel = dict2[groupingby], kind=kind)
     return plot
 
 def distinct_dates(df):
