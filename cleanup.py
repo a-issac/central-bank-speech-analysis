@@ -6,7 +6,6 @@ import langdetect
 
 def clean_missing_data(df):
     print(df.isna().sum())
-    print(df.sort_values("contents").head(5))
 
     df = df.dropna()
     df = df[df["contents"] != " "]
@@ -42,7 +41,7 @@ def add_date(df):
     df["Year"] = df.date.str[:4].astype(int)
     df["Month"] = df.date.str[5:7].astype(int)
     df["Day"] = df.date.str[8:].astype(int)
-    
+
     week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
               'November', 'December']
