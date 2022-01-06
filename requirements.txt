@@ -15,6 +15,7 @@ vaderSentiment
 plotly
 s3fs
 datasets
+pysentiment2
 
 yfinance
 
@@ -23,3 +24,4 @@ gensim
 openpyxl
 pyLDAvis
 
+sklearn
