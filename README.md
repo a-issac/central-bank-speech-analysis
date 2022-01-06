@@ -2,7 +2,7 @@
 
 Projet réalisé par Antoine ISSAC et Alex JIN dans le cadre du cours "Python pour le data scientist" en deuxième année de l'ENSAE Paris.
 
-Dans ce projet, nous avons chercher à analyser les discours du Comité Exécutif de la Banque Centrale Européenne avec des statistiques descriptives, de méthodes d'analyse de sentiments et de topic modeling. En effet, les annonces et les décisions des banques centrales, en particulier de la BCE, semblent avoir un impact important sur les marchés financiers, il nous parait donc intéressant d'analyser l'évolution de la communication de la BCE depuis 1997 (avec la transition de l'Institut Monétaire Européen à la Banque Centrale Européenne)
+Dans ce projet, nous avons chercher à analyser les discours du Comité Exécutif de la Banque Centrale Européenne avec des statistiques descriptives, de méthodes d'analyse de sentiments et de topic modeling. En effet, les annonces et les décisions des banques centrales, en particulier de la BCE, semblent avoir un impact important sur les marchés financiers, il nous parait donc intéressant d'analyser l'évolution de la communication de la BCE depuis 1997 (avec la transition de l'Institut Monétaire Européen à la Banque Centrale Européenne).
 
 ## Présentation des données
 
@@ -12,6 +12,14 @@ European Central Bank. (25 October 2019). Speeches dataset. Retrieved from: http
 
 ## Récapitulatif des fichiers et dossiers
 
-Notre projet s'articule autour d'un notebook principal qui utilise le code de plusieurs fichiers .py
+Notre projet s'articule autour d'un notebook principal *Notebook.ipynb* qui utilise le code de plusieurs fichiers .py :
+
+- *webscrap.py*
+- *statdes.py*
+- *basic_nlp.py*
+- *cleanup.py*
+
+*requirements.txt* récapitule tous les packages nécessaires à l'exécution du code du notebook.
+
 Le dossier *tests* contient plusieurs notebooks qui ont servi aux essais progressifs pour la réalisation du projet. Il a son propre fichier README.
 
