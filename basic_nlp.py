@@ -12,6 +12,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem import WordNetLemmatizer
 
+# Etape d'initialisation des modules de nltk
 nltk.download('genesis')
 nltk.corpus.genesis.words('english-web.txt')
 nltk.download('wordnet')
@@ -47,7 +48,7 @@ def randomsample(df, n=5):
 
 
 def named_entity(rawtext):
-    # Reconnaissance des entités nommées
+    """Reconnaissance des entités nommées"""
     nlp = spacy.load("en_core_web_lg")
     doc = nlp(rawtext)
     spacy.displacy.render(doc, style="ent", jupyter=True)
@@ -77,7 +78,7 @@ def freq_dict(text):
 #dictionary = freq_dict(rawtext)
 
 def freq_mots(text):
-    "Fonction pour récupérer les fréquences des mots d'un texte"
+    """Fonction pour récupérer les fréquences des mots d'un texte"""
     text = re.sub(r'==.*?==+', ' ', text)
     text = text.replace('\n', ' ')
     text = text.replace('\'',' ')
@@ -93,7 +94,7 @@ def freq_mots(text):
     return collections.Counter(T)
 
 def liste_mots(text):
-    "Fonction pour récupérer la liste des mots d'un texte brut"
+    """Fonction pour récupérer la liste des mots d'un texte brut"""
     text = re.sub(r'==.*?==+', ' ', text)
     text = text.replace('\n', ' ')
     text=text.replace('\'',' ')
@@ -108,7 +109,7 @@ def liste_mots(text):
     return [mot for mot in text.split() if mot not in list(stop_words)]
 
 def plus_frequents(text, n):
-    "Fonction pour récupérer les n mots les plus fréquents (hors stopwords) dans un texte brut"
+    """Fonction pour récupérer les n mots les plus fréquents (hors stopwords) dans un texte brut"""
     L = []
     text = re.sub(r'==.*?==+', ' ', text)
     text = text.replace('\n', ' ')
@@ -135,14 +136,14 @@ def word_counter(text, n):
     return collections.Counter(text).most_common(n)
 
 def get_bigrams(text, freq = 3):
-## Bigrams
+"""On détermine les Bigrammes"""
     finder = BigramCollocationFinder.from_words(text)
 # only bigrams that appear 3+ times
     finder.apply_freq_filter(freq)
     return finder
 
 def get_trigrams(text, freq = 3):
-## Trigrams
+"""On détermine les Trigrammes"""
     finder = TrigramCollocationFinder.from_words(text)
 # only trigrams that appear 3+ times
     finder.apply_freq_filter(freq)
@@ -151,14 +152,14 @@ def get_trigrams(text, freq = 3):
 
 
 def print_trigram_likelihood(finder):
-# return the 10 n-grams with the highest PMI
+""" return the 10 n-grams with the highest PMI"""
 # print (finder.nbest(trigram_measures.likelihood_ratio, 10))
     for i in finder.score_ngrams(trigram_measures.likelihood_ratio):
         print (i)
     return None
 
 def print_bigram_likelihood(finder):
-# return the 10 n-grams with the highest PMI
+"""return the 10 n-grams with the highest PMI"""
 # print (finder.nbest(bigram_measures.likelihood_ratio, 10))
     for i in finder.score_ngrams(bigram_measures.likelihood_ratio):
         print (i)
@@ -181,6 +182,7 @@ def freq_words_year(df,year,n = 10):
     return collections.Counter(tokens_filter(text)).most_common(n)
 
 def plot_freq_word(df, year, n=10):
+    """Affiche les mots les plus fréquents de l'année year """
     L = freq_words_year(df,year,n)
     x = []
     y = []

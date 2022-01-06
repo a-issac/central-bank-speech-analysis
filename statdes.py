@@ -19,9 +19,10 @@ import plotly
 
 
 def count_speeches(df, groupingby = 'Year', kind = 'line'):
+    # groupingby dans dict2 et kind = line, bar ou plotly
     df_grouped = df.groupby(groupingby).count()
     dict1 = {'bar' : 'N', 'line' : 'Evolution du n'}
-    dict2 = {'Year' : 'Année', 'Month' : 'Mois', 'Day' : 'Jour du mois', 'DayofWeek' : 'Jour de la semaine'}
+    dict2 = {'Year' : 'Année', 'Month' : 'Mois', 'Day' : 'Jour du mois', 'DayofWeek' : 'Jour de la semaine'} # On modifie le titre en fonction de ce qui est ploté
 
     plot = df_grouped["date"].plot(title = dict1[kind] + 'ombre de discours du Comité Exécutif de la BCE par ' + dict2[groupingby], xlabel = dict2[groupingby], kind=kind)
     return plot
@@ -55,6 +56,7 @@ def distinct_dates(df):
     return None
 
 def speech_months(df):
+    # Calcul le nb de discours par mois et l'affiche par nb de discours décroissant
     plt.clf()
     plt.figure()
     df["Month_str"].value_counts().plot(kind="bar")
@@ -62,6 +64,7 @@ def speech_months(df):
     return None
 
 def top_speakers(df, n=15):
+    # Affiche les n personnes ayant fait le plus discours
     plt.clf()
     plt.figure()
     df["speakers"].value_counts()[:n].plot(kind="bar")
