@@ -12,6 +12,14 @@ European Central Bank. (25 October 2019). Speeches dataset. Retrieved from: http
 
 ## Récapitulatif des fichiers et dossiers
 
-Notre projet s'articule autour d'un notebook principal qui utilise le code de plusieurs fichiers .py
+Notre projet s'articule autour d'un notebook principal *Notebook.ipynb* qui utilise le code de plusieurs fichiers .py :
+
+- *webscrap.py*
+- *statdes.py*
+- *basic_nlp.py*
+- *cleanup.py*
+
+*requirements.txt* récapitule tous les packages nécessaires à l'exécution du code du notebook.
+
 Le dossier *tests* contient plusieurs notebooks qui ont servi aux essais progressifs pour la réalisation du projet. Il a son propre fichier README.
 
