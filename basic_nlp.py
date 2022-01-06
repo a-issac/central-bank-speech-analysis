@@ -136,31 +136,31 @@ def word_counter(text, n):
     return collections.Counter(text).most_common(n)
 
 def get_bigrams(text, freq = 3):
-"""On détermine les Bigrammes"""
+    """On détermine les Bigrammes"""
     finder = BigramCollocationFinder.from_words(text)
 # only bigrams that appear 3+ times
     finder.apply_freq_filter(freq)
     return finder
 
 def get_trigrams(text, freq = 3):
-"""On détermine les Trigrammes"""
+    """On détermine les Trigrammes"""
     finder = TrigramCollocationFinder.from_words(text)
-# only trigrams that appear 3+ times
+    # only trigrams that appear 3+ times
     finder.apply_freq_filter(freq)
     return finder
 
 
 
 def print_trigram_likelihood(finder):
-""" return the 10 n-grams with the highest PMI"""
-# print (finder.nbest(trigram_measures.likelihood_ratio, 10))
+    """ return the 10 n-grams with the highest PMI"""
+    # print (finder.nbest(trigram_measures.likelihood_ratio, 10))
     for i in finder.score_ngrams(trigram_measures.likelihood_ratio):
         print (i)
     return None
 
 def print_bigram_likelihood(finder):
-"""return the 10 n-grams with the highest PMI"""
-# print (finder.nbest(bigram_measures.likelihood_ratio, 10))
+    """return the 10 n-grams with the highest PMI"""
+    # print (finder.nbest(bigram_measures.likelihood_ratio, 10))
     for i in finder.score_ngrams(bigram_measures.likelihood_ratio):
         print (i)
     return None
