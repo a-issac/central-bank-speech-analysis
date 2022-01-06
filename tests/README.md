@@ -19,4 +19,7 @@ Ce travail a été divisé en plusieurs notebooks pour accélérer l'exécution 
 
 - *Tests-regression-random-forest.ipynb* : ce notebook contient quelques tests sur de régressions linéaires et avec Random Forest sur les données et variables obtenues précédemment.
 
+- *regression.ipynb* : ce notebook contient d'autres tests sur de régressions linéaires et avec Random Forest sur les données et variables obtenues précédemment.
+
+- *finbert + tf idf.ipynb* : ce notebook contient des éléments de nettoyage de données, une tentative d'utilisation de finbert pour l'analyse de sentiment et le calcul du score de tf-idf pour les documents (infructueux par manque de mémoire)0
 
