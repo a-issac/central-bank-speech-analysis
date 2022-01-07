@@ -17,6 +17,7 @@ s3fs
 datasets
 pysentiment2
 
+wbgapi
 yfinance
 
 langdetect
